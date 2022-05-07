@@ -16,7 +16,7 @@ win32print.SetDefaultPrinter(principal_imp[2])
 
 
 a = int(input("Coloque a quantidade de cópias"))
-caminho = input("Cole o caminho")
+caminho = input("Cole o caminho(imprime tudo no diretório)")
 caminho = caminho
 
 
