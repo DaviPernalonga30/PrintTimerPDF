@@ -2,12 +2,18 @@ from time import sleep
 from win32 import win32print, win32api
 import os
 
+
+i = 1
 lista_impressoras = win32print.EnumPrinters(2)
 for impressora in lista_impressoras:
-    print(impressora)
+    
+    print(i, impressora)
+    i = i + 1
 
-principal_imp = lista_impressoras[0]
-print(principal_imp[2])
+
+aux = int(input("Coloque o número da impressora que deseja selecionar: "))
+principal_imp = lista_impressoras[aux-1]
+print("Impressora selecionada: ", principal_imp[2])
 win32print.SetDefaultPrinter(principal_imp[2])
 
 a = int(input("Coloque a quantidade de cópias: "))
