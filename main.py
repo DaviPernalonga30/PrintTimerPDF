@@ -6,7 +6,7 @@ import os
 i = 1
 lista_impressoras = win32print.EnumPrinters(2)
 for impressora in lista_impressoras:
-    
+
     print(i, impressora)
     i = i + 1
 
@@ -26,7 +26,7 @@ while b <= a:
     for arq in lista_arq:
         print("enviando request número: ", b)
         win32api.ShellExecute(0, "print", arq, None, caminho, 0)
-        if b<a:
+        if b < a:
             sleep(240)
             print("metade do tempo, impressão: ", b)
             sleep(240)
