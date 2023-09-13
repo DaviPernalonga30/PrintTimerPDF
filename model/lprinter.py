@@ -7,14 +7,14 @@ class LinuxPrinter():
         self.printers = None
         self.defaultPrinter = None
 
-    def Printer(self):
+    def __printer(self):
         pass
 
-    def _LgetPrinters(self):
+    def _getPrinters(self):
         pass
 
-    def _LgetDefaulPrinter(self):
+    def _getDefaultPrinter(self):
         pass
 
-    def LsetDefaultPrinter(self):
+    def setDefaultPrinter(self):
         pass

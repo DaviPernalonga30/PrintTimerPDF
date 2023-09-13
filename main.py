@@ -1,3 +1,9 @@
+from model.printer import getPrintModule
+
+Printer = getPrintModule()
+
+
+"""
 from time import sleep
 from win32 import win32print, win32api
 import os
@@ -34,3 +40,5 @@ while b <= a:
         else:
             print("Trabalho concluído")
     b += 1
+
+"""
