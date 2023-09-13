@@ -9,16 +9,13 @@ class WinPrinter():
     def __init__(self):
         self.printers = None
         self.defaultPrinter = None
-        self._winPrinter()
+        self.Printer()
 
-    def _winPrinter(self):
+    def Printer(self):
         threadGetPrinters = Thread(target=self._WgetPrinters)
         threadGetDefaulPrinter = Thread(target=self._WgetDefaultPrinter)
         threadGetPrinters.start()
         threadGetDefaulPrinter.start()
-        pass
-
-    def _linuxPrinter():
         pass
 
     # Windows Specific code
