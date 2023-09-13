@@ -5,7 +5,7 @@ from threading import Thread
 # Linux specific code starts with L
 
 
-class Printer():
+class WinPrinter():
     def __init__(self):
         self.printers = None
         self.defaultPrinter = None
