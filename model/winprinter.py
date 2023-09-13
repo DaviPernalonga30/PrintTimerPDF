@@ -3,6 +3,7 @@ from threading import Thread
 
 # Windows specific code starts with W
 # Linux specific code starts with L
+# Refactor code for the same function names
 
 
 class WinPrinter():
