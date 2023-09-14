@@ -6,14 +6,13 @@ class WinPrinter():
     def __init__(self):
         self.printers = None
         self.defaultPrinter = None
-        self.__printer()
+        th = Thread(target=self.__printer)
+        th.start()
+        th.join()
 
     def __printer(self):
-        threadGetPrinters = Thread(target=self._getPrinters)
-        threadGetDefaulPrinter = Thread(target=self._getDefaultPrinter)
-        threadGetPrinters.start()
-        threadGetDefaulPrinter.start()
-        pass
+        self._getPrinters()
+        self._getDefaultPrinter()
 
     # Windows Specific code
 
@@ -25,8 +24,8 @@ class WinPrinter():
         self.defaultPrinter = win32print.GetDefaultPrinterW()
 
     def setDefaultPrinter(self, index):
-        if index > self.printers.__len__():
-            pass
+        if index >= self.printers.__len__():
+            return
         self.defaultPrinter = self.printers[index]
 
         # 2 is the index of the name of the printer

@@ -1,8 +1,13 @@
 from model.printer import getPrintModule
 
 Printer = getPrintModule()
+for pr in Printer.printers:
+    print(pr)
+    print("")
 
-
+print(Printer.defaultPrinter)
+Printer.setDefaultPrinter(1)
+print(Printer.defaultPrinter)
 """
 from time import sleep
 from win32 import win32print, win32api
