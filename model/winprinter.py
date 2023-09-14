@@ -6,6 +6,7 @@ class WinPrinter():
     def __init__(self):
         self.printers = None
         self.defaultPrinter = None
+        self.printersName = []
         th = Thread(target=self.__printer)
         th.start()
         th.join()
@@ -13,8 +14,11 @@ class WinPrinter():
     def __printer(self):
         self._getPrinters()
         self._getDefaultPrinter()
+        self._getPrintersNameList()
 
-    # Windows Specific code
+    def _getPrintersNameList(self):
+        for pr in self.printers:
+            self.printersName.append(pr[2])
 
     def _getPrinters(self):
         self.printers = win32print.EnumPrinters(

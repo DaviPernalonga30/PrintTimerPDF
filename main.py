@@ -1,9 +1,7 @@
 from model.printer import getPrintModule
 
 Printer = getPrintModule()
-for pr in Printer.printers:
-    print(pr)
-    print("")
+print(Printer.printersName)
 
 print(Printer.defaultPrinter)
 Printer.setDefaultPrinter(1)
