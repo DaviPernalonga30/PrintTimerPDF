@@ -7,17 +7,21 @@ class LinuxPrintJob():
         self.file_path = file_path
         self.options = options
         self.__conn = cups.Connection()
-
         if self.options == None:
             self.options = self.__conn.getDefaultOptions(self.printer)
 
     def _getJobInfo(self, index):
+
         pass
 
-    def _getAllPrintJobs(self):
-        pass
+    def _getAllJobs(self):
+        return self.__conn.getJobs(self.printer, myJobs=True)
 
-    def printFile(self):
+    def printFile(self, job_id):
+        job_id = self.createPrintJob()
+        # with open(self.file_path, "rb") as file:
+        self.__conn.printFile(self.printer, job_id,
+                              self.file_path, self.file_path, {})
         # Separa o CreatePrintJob de uma print normal
         pass
 
@@ -27,7 +31,4 @@ class LinuxPrintJob():
         job_id = self.__conn.createJob(
             self.printer, self.file_path, self.options)
 
-        with open(self.file_path, "rb") as file:
-            self.__conn.printFile(self.printer, job_id,
-                                  self.file_path, self.file_path, {})
-        pass
+        return job_id
