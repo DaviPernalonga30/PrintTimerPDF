@@ -1,11 +1,17 @@
 from model.printer import getPrintModule
-
+from controller.print_job import getJobModule
 Printer = getPrintModule()
 print(Printer.printersName)
+print(Printer.defaultPrinter)
 
-print(Printer.defaultPrinter)
-Printer.setDefaultPrinter(1)
-print(Printer.defaultPrinter)
+options = {'Mirror': 'True',
+           'Print Quality': 'PLAIN_HIGH'
+           }
+
+Job = getJobModule(Printer.defaultPrinter,
+                   "/home/davi/Downloads/Espelho Mães.pdf", options)
+Job.startJob()
+
 """
 from time import sleep
 from win32 import win32print, win32api
