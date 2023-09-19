@@ -21,6 +21,15 @@ class LinuxPrinter():
         for pr in self.printers:
             self.printersName.append(pr)
 
+    def _getJobInfo(self, job_id):
+        raw_info = self.__conn.getJobAttributes(job_id)
+        # Tratar dados:
+        info = raw_info
+        return info
+
+    def _getAllJobs(self):
+        return self.__conn.getJobs(self.printer, myJobs=True)
+
     def _getPrinters(self):
         self.printers = self.__conn.getPrinters()
 
