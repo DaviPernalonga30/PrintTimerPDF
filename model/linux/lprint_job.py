@@ -26,3 +26,13 @@ class LinuxPrintJob():
 
     def startJob(self):
         self._printFile()
+
+    def setSublimaticDefaults(self):
+        self.options = {'Mirror': 'True',
+                        'Print Quality': 'PLAIN_HIGH',
+                        }
+
+    def setNormalDefaults(self):
+        self.options = {'Mirror': 'False',
+                        'Print Quality': 'PLAIN_NORMAL',
+                        }
