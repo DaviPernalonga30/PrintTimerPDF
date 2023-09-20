@@ -1,4 +1,4 @@
-# PrintTimerPDF
+# 2DSPyPrinting
 
 ## Multiplataform python lib for printing documents  
 On Windows the support is limited is need a third-party app for printing PDFs or Images  
