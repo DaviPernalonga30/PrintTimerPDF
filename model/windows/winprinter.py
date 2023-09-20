@@ -27,10 +27,11 @@ class WinPrinter():
     def _getDefaultPrinter(self):
         self.defaultPrinter = win32print.GetDefaultPrinterW()
 
+
     def setDefaultPrinter(self, index):
         if index >= self.printers.__len__():
             return
-        self.defaultPrinter = self.printers[index]
-
+        self.defaultPrinter = self.printersName[index]
+        
         # 2 is the index of the name of the printer
-        win32print.SetDefaultPrinter(self.defaultPrinter[2])
+        win32print.SetDefaultPrinter(self.defaultPrinter)

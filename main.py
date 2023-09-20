@@ -11,7 +11,7 @@ options = {'Mirror': 'True',
            }
 
 Job = getJobModule(Printer.defaultPrinter,
-                   "/home/davi/Downloads/Espelho Mães.pdf")
+                   "C:\\Users\\Davi\\Downloads\\t.txt")
 # Job.setSublimaticDefaults()
 Job.startJob()
 
