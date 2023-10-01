@@ -31,5 +31,8 @@ class WindowsPrintJob():
             win32api.ShellExecute(0, "print", self.file_path, None, self.file_path, 0)
         
     def startJob(self):
+        """
+        Print specified file, the file is defined in the Class define.
+        """
         self._printFile()
         win32print.ClosePrinter(self._handler)

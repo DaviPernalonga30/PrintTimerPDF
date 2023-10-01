@@ -16,14 +16,27 @@ class LinuxPrintJob():
                               job_name, self.options)
 
     def startJob(self):
+        """
+        Print specified file, the file is defined in the Class define.
+        """
         self._printFile()
 
     def setSublimaticDefaults(self):
+        """
+        LINUX ONLY
+        Set printer configuration to Mirrored and the Quality for the Max
+        This is a simple de
+        """
         self.options = {'Mirror': 'True',
                         'Print Quality': 'PLAIN_HIGH',
                         }
 
     def setNormalDefaults(self):
+        """
+        LINUX ONLY
+        Set printer configuration to not Mirrored and the Quality for the normal
+        This is a simple default
+        """
         self.options = {'Mirror': 'False',
                         'Print Quality': 'PLAIN_NORMAL',
                         }
